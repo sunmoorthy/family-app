@@ -75,7 +75,9 @@ public class UserDAOImpl implements UserDAO{
 		Query familyQuery = new Query(Criteria.where("userIds").in(user.getUserId()));
 		List<Family> families = mongoTempalte.find(familyQuery, Family.class);
 		user.setFamilies(families);
-		user.setDefaultFamily(families.get(0).getFamilyId());
+		if(user.getFamilies()!=null && !user.getFamilies().isEmpty()) {
+			user.setDefaultFamily(families.get(0).getFamilyId());
+		}
 		return user;
 		}catch(Exception e){
 			throw e;

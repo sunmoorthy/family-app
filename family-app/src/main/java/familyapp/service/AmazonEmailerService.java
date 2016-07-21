@@ -41,13 +41,12 @@ public class AmazonEmailerService {
 	 */
 	public static void main(String[] args) {
 
-	//AKIAICZTRMWXMTNSXW7Q,0jMqIwK3g/5Db3imyUO3//GckrZubLxwkn+sVu1S
-		final AmazonSimpleEmailServiceClient aesc = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials("AKIAJWZFZVJ7OYC6SYBA", "KdqQW1panzXBh3Fqaq82lQI4A/kgjr3RUXOroD03"));
+		final AmazonSimpleEmailServiceClient aesc = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials("", ""));
 		final SendEmailRequest ser = new SendEmailRequest();
 		// setting from
-			ser.setSource("peter@familyapp.net");
+			ser.setSource("");
 		final Destination dest = new Destination();
-			dest.setToAddresses(Arrays.asList("robin@aprilbonus.com" , "peter@oceanblue.net"));
+			dest.setToAddresses(Arrays.asList("" , ""));
 		ser.setDestination(dest);
 		ser.setMessage(compose("SES email works","Hi Peter, SES email works from application!!!!"));
 		
